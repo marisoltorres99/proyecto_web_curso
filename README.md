@@ -42,17 +42,13 @@ Luego actualizamos pip mas otras deps relacionadas:
 
 # Crear DB en MySQL, crear usuario para DB y asignar permisos
 
-`sudo mysql -u root` # con esto entramos a la consola de MySQL
-
 ```
-> CREATE DATABASE nombre_db
+CREATE DATABASE nombre_db
     DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_spanish_ci;
 
-> CREATE USER 'usuario_db'@'localhost' IDENTIFIED BY 'completar password';
+CREATE USER 'usuario_db'@'localhost' IDENTIFIED BY 'completar password';
 
-> GRANT ALL PRIVILEGES ON nombre_db.* TO 'usuario_db'@'localhost';
-
-> exit    # salimos de la consola MySQL
+GRANT ALL PRIVILEGES ON nombre_db.* TO 'usuario_db'@'localhost';
 ```
 
 # Modificar estructura de settings para convertirlo en un package
