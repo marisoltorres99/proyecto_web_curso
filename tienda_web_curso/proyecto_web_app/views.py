@@ -2,16 +2,16 @@ from django.shortcuts import HttpResponse, render
 
 
 def home(request):
-    return HttpResponse("Home")
+    return render(request, "proyecto_web_app/home.html")
 
 def servicios(request):
-    return HttpResponse("Servicios")
+    return render(request, "proyecto_web_app/servicios.html")
 
 def tienda(request):
-    return HttpResponse("Tienda")
+    return render(request, "proyecto_web_app/tienda.html")
 
 def blog(request):
-    return HttpResponse("Blog")
+    return render(request, "proyecto_web_app/blog.html")
 
 def contacto(request):
-    return HttpResponse("Contacto")
+    return render(request, "proyecto_web_app/contacto.html")
