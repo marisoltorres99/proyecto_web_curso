@@ -10,7 +10,7 @@ Para instalarlo y luego crearlo ejecutamos:
 
 `cd <carpeta_del_repositorio_git>`
 
-`virtualenv -p /usr/bin/python3.8 --prompt "(virtualenv-PWC)" virtualenv`
+`virtualenv -p /usr/bin/python3.10 --prompt "(virtualenv-PWC)" virtualenv`
 
 Activar el virtualenv recién creado y luego actualizar pip:
 
