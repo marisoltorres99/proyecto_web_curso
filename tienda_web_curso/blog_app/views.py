@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from blog_app.models import Post
+from blog_app.models import Categoria, Post
 
 
 def blog(request):

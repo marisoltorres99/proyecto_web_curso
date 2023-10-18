@@ -13,11 +13,22 @@
                 <h2 class="section-heading mb-4" >
                     <span class="section-heading-lower">{{p.titulo}}</span>
                     <span class="section-heading-upper">{{p.contenido}}</span>
+                    <br>
+                    <span style="text-align: left;" class="section-heading-upper">Autor:{{p.autor}}</span>
                 </h2>
             </div>
             </div>
         </div>
     </section>
     {% endfor %}
-
+    <section>
+        <div style="width: 75%; margin: auto; text-align: center; color: white;">
+            Categorias:
+            {% for post in posts %}
+                {% for categoria in post.categorias.all%}
+                    {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
