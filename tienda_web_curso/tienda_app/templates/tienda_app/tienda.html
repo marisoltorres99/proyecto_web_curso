@@ -1,11 +1,21 @@
 {% extends "proyecto_web_app/base.html" %}
 {% load static %}
 {% block content %}
-    <div class="row">
-        {% for p in productos %}
-            <div class="card" style="width: 10%;">
-                <img src="{{ p.imagen.url }}" alt="">
-            </div>
-        {% endfor %}
+    <div class="container">
+        <div class="row">
+            {% for p in productos %}
+                <div class="col-md-3">
+                    <div class="card" style="width: 100%; margin: 5px 5px;">
+                        <img src="{{ p.imagen.url }}" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h7 class="card-title">
+                            {{ p.nombre }}
+                            </h7>
+                            <p class="card-text">{{ p.precio }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}
