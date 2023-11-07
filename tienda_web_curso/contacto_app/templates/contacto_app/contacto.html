@@ -1,7 +1,15 @@
 {% extends "proyecto_web_app/base.html" %}
 {% load static %}
 {% block content %}
-    <div>
-        <p style="color: white;">{{ form }}</p>
+    <link rel="stylesheet"
+          href="{% static 'proyecto_web_app/css/gestion.css' %}">
+    <div class="contenedorForm">
+        <form action="" method="post">
+            {% csrf_token %}
+            <table style="margin: 20px auto;">
+                {{ form.as_table }}
+            </table>
+            <input type="submit" value="Enviar">
+        </form>
     </div>
 {% endblock %}
