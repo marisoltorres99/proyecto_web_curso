@@ -1,7 +1,11 @@
 {% extends "proyecto_web_app/base.html" %}
-
 {% load static %}
-
 {% block content %}
-<div><p></p></div>
+    <div class="row">
+        {% for p in productos %}
+            <div class="card" style="width: 10%;">
+                <img src="{{ p.imagen.url }}" alt="">
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
