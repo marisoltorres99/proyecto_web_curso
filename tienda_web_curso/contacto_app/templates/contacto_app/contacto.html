@@ -4,6 +4,7 @@
     <link rel="stylesheet"
           href="{% static 'proyecto_web_app/css/gestion.css' %}">
     <div class="contenedorForm">
+        {% if "valido" in request.GET %}<p>Informacion enviada correctamente</p>{% endif %}
         <form action="" method="post">
             {% csrf_token %}
             <table style="margin: 20px auto;">
