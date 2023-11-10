@@ -27,3 +27,22 @@ class Carro:
     def guardar_carro(self):
         self.session["carro"] = self.carro
         self.session.modified = True
+
+    def eliminar(self, producto):
+        producto.id = str(producto.id)
+        if producto.id in self.carro:
+            del self.carro[producto.id]
+            self.guardar_carro()
+
+    def restar(self, producto):
+        for key, value in self.carro.items():
+            if key == str(producto.id):
+                value["cantidad"] = value["cantidad"] - 1
+                if value["cantidad"] < 1:
+                    self.eliminar(producto)
+                break
+        self.guardar_carro()
+
+    def limpiar(self):
+        self.session["carro"] = {}
+        self.session.modified = True
