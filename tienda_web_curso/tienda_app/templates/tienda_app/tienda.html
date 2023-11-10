@@ -2,16 +2,22 @@
 {% load static %}
 {% block content %}
     <div class="container">
+        <div style="float: right;">
+            <p style="color: white;">prueba</p>
+        </div>
         <div class="row">
             {% for p in productos %}
                 <div class="col-md-3">
                     <div class="card" style="width: 100%; margin: 5px 5px;">
                         <img src="{{ p.imagen.url }}" alt="" class="card-img-top">
-                        <div class="card-body">
+                        <div class="card-body" style="text-align: center;">
                             <h7 class="card-title">
                             {{ p.nombre }}
                             </h7>
                             <p class="card-text">{{ p.precio }}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="" class="btn btn-success">Agregar al carro</a>
                         </div>
                     </div>
                 </div>
