@@ -1,3 +1,8 @@
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 class Carro:
     def __init__(self, request):
         self.request = request
@@ -5,11 +10,11 @@ class Carro:
         carro = self.session.get("carro")
         if not carro:
             carro = self.session["carro"] = {}
-        else:
-            self.carro = carro
+        self.carro = carro
 
     def agregar(self, producto):
-        if (str(producto.id)) not in self.carro.keys:
+        logger.error(self.carro)
+        if str(producto.id) not in self.carro.keys():
             self.carro[producto.id] = {
                 "producto_id": producto.id,
                 "nombre": producto.nombre,
@@ -21,8 +26,9 @@ class Carro:
             for key, value in self.carro.items():
                 if key == str(producto.id):
                     value["cantidad"] = value["cantidad"] + 1
+                    #value["precio"] = float(value["precio"] + producto.precio)
                     break
-            self.guardar_carro()
+        self.guardar_carro()
 
     def guardar_carro(self):
         self.session["carro"] = self.carro

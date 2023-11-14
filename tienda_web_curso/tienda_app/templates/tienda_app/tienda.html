@@ -2,9 +2,7 @@
 {% load static %}
 {% block content %}
     <div class="container">
-        <div style="float: right;">
-            <p style="color: white;">Total: {{ importe_total_carro }}</p>
-        </div>
+        <div style="float: right;">{% include "carro_app/widget.html" %}</div>
         <div class="row">
             {% for p in productos %}
                 <div class="col-md-3">
@@ -17,7 +15,7 @@
                             <p class="card-text">{{ p.precio }}</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="" class="btn btn-success">Agregar al carro</a>
+                            <a href="{% url 'carro_app:agregar' p.id %}" class="btn btn-success">Agregar al carro</a>
                         </div>
                     </div>
                 </div>
