@@ -3,6 +3,11 @@
 {% block content %}
     <form action="" method="post" style="color: white;">
         {% csrf_token %}
+        {% if messages %}
+            {% for mensaje in  messages %}<span class="alert alert-danger">{{ mensaje }}</span>{% endfor %}
+            <br>
+        {% endif %}
+        <br>
         {{ form }}
         <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
     </form>

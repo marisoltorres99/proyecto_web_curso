@@ -129,3 +129,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+from django.contrib.messages import constants as mensajes_error
+
+MESSAGES_TAGS = {
+    mensajes_error.DEBUG: "debug",
+    mensajes_error.INFO: "info",
+    mensajes_error.SUCCESS: "success",
+    mensajes_error.WARNING: "warning",
+    mensajes_error.ERROR: "danger",
+}
