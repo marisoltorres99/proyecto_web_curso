@@ -23,7 +23,7 @@
             {% if user.is_authenticated %}
                 Hola {{ user.username }} &nbsp;&nbsp;&nbsp;<a href="{% url 'cerrar' %}">Cerrar Sesion</a>
             {% else %}
-                <a href="">Iniciar Sesion</a> &nbsp;&nbsp;&nbsp;<a href="{% url 'autenticacion' %}">Registrarse</a>
+                <a href="{% url 'iniciarsesion' %}">Iniciar Sesion</a> &nbsp;&nbsp;&nbsp;<a href="{% url 'autenticacion' %}">Registrarse</a>
             {% endif %}
         </div>
         <!-- Navbar -->

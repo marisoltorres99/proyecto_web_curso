@@ -1,0 +1,9 @@
+{% extends "proyecto_web_app/base.html" %}
+{% load static %}
+{% block content %}
+    <form action="" method="post" style="color: white;">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class="btn btn-primary">Iniciar Sesion</button>
+    </form>
+{% endblock %}
