@@ -2,7 +2,14 @@
 {% load static %}
 {% block content %}
     <div class="container">
-        <div style="float: right;">{% include "carro_app/widget.html" %}</div>
+        <div style="float: right;">
+            {% if request.user.is_authenticated %}
+                {% include "carro_app/widget.html" %}
+            {% else %}
+                <br>
+                <span class="alert alert-warning text-center">¡Debes <a href="{% url 'iniciarsesion' %}">Iniciar Sesion</a> para comprar!</span>
+            {% endif %}
+        </div>
         <div class="row">
             {% for p in productos %}
                 <div class="col-md-3">
